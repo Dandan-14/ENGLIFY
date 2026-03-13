@@ -38,7 +38,7 @@ h1,h2,h3{
   font-weight:600;
 }
 
-.center h1{
+#roulette h1{
   font-size: 100px;
   margin: 0vh 0 8vh 0;
 }
@@ -57,8 +57,8 @@ button:hover{
 }
 
 /* form elements */
-input[type="text"],input[type="password"],.search{
-  width:80%;
+input[type="text"],input[type="password"],input[type="email"],.search{
+  width:90vw;
   font-size:60px;
   max-width:90vw;
   border:none;
@@ -66,6 +66,10 @@ input[type="text"],input[type="password"],.search{
   border-radius:25px;
   margin:8px 0;
   box-shadow:0 2px 4px rgba(0,0,0,.1);
+}
+
+input[type="email"]{
+  width: 90vw;
 }
 
 /* primary button style */
