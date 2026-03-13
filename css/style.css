@@ -39,8 +39,8 @@ h1,h2,h3{
 }
 
 .center h1{
-  font-size:60px;
-  margin: 2px;
+  font-size: 100px;
+  margin: 0vh 0 8vh 0;
 }
 
 p{
@@ -215,19 +215,15 @@ body.roulette {
 
   /* center roulette content vertically and horizontally */
   body.roulette { justify-content:center;  }
-  .wheel-container { margin-top:20px; }
-  .wheel-container + button { margin-top:10px; }
 
   .box-btn {
     display:flex;
     justify-content:center;
-    margin-top:10px;
   }
 
   /* scale wheel down */
-  .wheel-container { width:100vw; }
   #wheel .slice { width:260px; height:260px; padding-top:26px; }
-  #wheel .icon { width:30px; height:30px; font-size: 70px;}
+  #wheel .icon { width:30px; height:30px; font-size: 100px;}
   .pointer { border-left:15px solid transparent; border-right:15px solid transparent; border-top:20px solid #e74c3c; }
 }
 
@@ -281,16 +277,16 @@ body.roulette {
 .wheel-container{
   position:relative;
   width:100vw; /* bigger container to match larger wheel */
-  margin:auto;
+  margin: 2vh 0 2vh 0;
 }
 
 #wheel{
   border:5px solid #000;
   border-radius:50%;
-  width:60vw;
-  height:60vw;
+  width:80vw;
+  height:80vw;
   position:relative;
-  margin-left: 19%;
+  margin: 0 0 5vh 9%;
   /* shift start of gradient so 0deg corresponds to 324deg on the wheel; red stays a single slice */
   background: conic-gradient(from 324deg,
     #e74c3c 0deg 72deg,
@@ -319,11 +315,9 @@ body.roulette {
 #wheel .icon{
   position:absolute;
   top:45%;
-  left:45%;
+  left:42%;
   display:inline-block;
-  width:40px;
-  height:40px;
-  line-height:40px;
+  line-height:50px;
   text-align:center;
   transform-origin:50% 50%; /* rotate around center */
 }
@@ -350,21 +344,9 @@ body.roulette {
   100% { transform: rotate(1080deg); }
 }
 
-/* ensure spin button sits directly below wheel */
-.wheel-container button,
-button.btn-primary {
-  margin-top:8px; /* small gap */
-  display:block;
-  width:50%;
-  max-width:200px;
-  align-self:center;
-}
 
-.wheel-container{
-  justify-content: center;
-}
 .spin-animation {
-  animation: spin 2s ease-out;
+  animation: spin 3s ease-out;
 }
 
 .mission-card{
@@ -563,4 +545,42 @@ font-size: 40px;
     display: flex;
     height: 50vh;
     justify-content: center;   
+}
+
+.box-player{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95vw;
+    height: 20vw;
+    background-color: #3498db;
+    color: white;
+    border-radius: 10px;
+}
+
+.profile .profile-pic{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #2ecc71;
+    color: white;
+    font-size: 24px;
+    display: flex;
+}
+
+.box{
+  display: flex;
+}
+
+.rack{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 13vw;
+    height: 13vw;
+    background-color: #7ed6dfef;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid #000
 }
