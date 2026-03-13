@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Result</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="center">
+
+<h1 id="resultText"></h1>
+
+<button class="btn-primary" onclick="menu()">Back to menu</button>
+
+<script>
+
+let result = localStorage.getItem("result")
+
+document.getElementById("resultText").innerText = result
+
+function menu(){
+window.location.href="menu.html"
+}
+
+</script>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div onclick="goMenu()">🏠</div>
+  <div onclick="goMissions()">🎯</div>
+  <div onclick="goGame()">🎮</div>
+  <div onclick="goProfile()">👤</div>
+</div>
+
+<script>
+function goMenu(){ window.location.href="menu.html"; }
+function goMissions(){ window.location.href="missions.html"; }
+function goGame(){ window.location.href="roulette.html"; }
+function goProfile(){ window.location.href="profile.html"; }
+</script>
+
+</body>
+</html>

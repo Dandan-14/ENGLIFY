@@ -1,0 +1,569 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+html, body{
+  width:100%;
+  height:100%;
+  margin:0;
+  overflow:hidden; /* disable scroll */
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(180deg,#33b3cc 0%,#7ed6df 100%);
+  min-height:100vh;
+  color:#333;
+  font-size: 40px;
+}
+
+.profile{
+    color: white;
+}
+
+/* center helper */
+.center{
+  display:flex;
+  font-size: 70px;
+  font-weight:600;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  text-align:center;
+  color: white;
+  padding:20px;
+}
+
+h1,h2,h3{
+  margin:10px 0;
+  font-weight:600;
+}
+
+.center h1{
+  font-size:60px;
+  margin: 2px;
+}
+
+p{
+  margin:5px 0;
+}
+
+button{
+  cursor:pointer;
+  transition:all .2s ease;
+}
+
+button:hover{
+  transform:scale(1.02);
+}
+
+/* form elements */
+input[type="text"],input[type="password"],.search{
+  width:80%;
+  font-size:60px;
+  max-width:90vw;
+  border:none;
+  padding:20px 20px;
+  border-radius:25px;
+  margin:8px 0;
+  box-shadow:0 2px 4px rgba(0,0,0,.1);
+}
+
+/* primary button style */
+.play-btn, .btn-primary{
+  font-size:40px;
+  width:100%;
+  background:linear-gradient(90deg,#3498db,#2ecc71);
+  color:white;
+  border:none;
+  padding:15px;
+  border-radius:25px;
+  box-shadow:0 4px 8px rgba(0,0,0,.15);
+}
+
+.btn-primary{
+  font-size: 60px;
+}
+
+/* TOP BAR */
+
+.topbar{
+
+display:flex;
+justify-content:space-between;
+padding:20px;
+
+}
+
+
+.icons{
+
+font-size:20px;
+
+}
+
+/* HERO */
+
+.hero{
+
+text-align:center;
+margin-top:20px;
+
+}
+
+.character{
+
+font-size:80px;
+
+}
+
+/* GAME SECTION */
+
+game-section{
+
+background:white;
+margin-top:40px;
+border-radius:30px 30px 0 0;
+padding:20px;
+
+}
+
+/* CARDS */
+
+.games{
+
+display:flex;
+gap:15px;
+overflow-x:auto;
+
+}
+
+.card{
+
+background:#f5f5f5;
+padding:15px;
+border-radius:15px;
+text-align:center;
+min-width:120px;
+box-shadow:0 4px 8px rgba(0,0,0,.1);
+
+}
+
+.card button{
+
+background:#4a90e2;
+border:none;
+color:white;
+padding:8px 15px;
+border-radius:10px;
+
+}
+
+/* AVATARS */
+
+.avatar{
+
+width:50px;
+height:50px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-weight:bold;
+margin:auto;
+margin-bottom:10px;
+
+}
+
+.green{background:#2ecc71;}
+.blue{background:#3498db;}
+.orange{background:#f39c12;}
+
+/* NAVBAR */
+
+.navbar{
+
+position:fixed;
+bottom:0;
+width:100%;
+background:white;
+display:flex;
+justify-content:space-around;
+padding:15px;
+font-size:22px;
+box-shadow:0 -2px 8px rgba(0,0,0,.1);
+}
+
+/* roulette-specific layout */
+body.roulette {
+  justify-content:flex-start;
+  padding-top:20px;
+}
+
+/* responsive tweaks for small screens */
+@media (max-width: 6000px) {
+  /* general mobile tweaks */
+  body { padding:10px; }
+  
+
+  .play-btn, .btn-primary { padding:12px; }
+  input[type="text"], input[type="password"], .search { width:90%; }
+
+  .navbar { padding:10px; font-size:18px; }
+  .games { gap:10px; }
+  .card { min-width:100px; }
+
+  /* center roulette content vertically and horizontally */
+  body.roulette { justify-content:center;  }
+  .wheel-container { margin-top:20px; }
+  .wheel-container + button { margin-top:10px; }
+
+  .box-btn {
+    display:flex;
+    justify-content:center;
+    margin-top:10px;
+  }
+
+  /* scale wheel down */
+  .wheel-container { width:90vw; }
+  #wheel { width:260px; height:260px; }
+  #wheel .slice { width:260px; height:260px; padding-top:26px; }
+  #wheel .icon { width:30px; height:30px; font-size:20px; }
+  .pointer { top:-15px; border-left:15px solid transparent; border-right:15px solid transparent; border-bottom:20px solid #e74c3c; }
+}
+
+.navbar div{
+  cursor:pointer;
+  transition:transform .2s, color .2s;
+}
+
+.navbar div:hover{
+  transform:scale(1.2);
+}
+
+.navbar .active{
+  color:#3498db;
+}
+
+/* specific pages */
+
+.missions{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  padding:20px;
+}
+
+.answers{
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  max-width:90vh;
+}
+
+.answers button{
+  margin:5px 0;
+  padding:12px 20px;
+  border-radius:20px;
+  background:#fff;
+  border:2px solid #3498db;
+  color:#000;
+  font-weight:600;
+  height: 90px;
+  font-size: 50px;
+}
+
+.answers button:hover{
+  background:#3498db;
+  color:#fff;
+}
+
+/* wheel container positions pointer */
+.wheel-container{
+  position:relative;
+  width:420px; /* bigger container to match larger wheel */
+  margin:auto;
+}
+
+#wheel{
+  font-size:40px;
+  padding:0;
+  border:4px dashed #3498db;
+  border-radius:50%;
+  width:60vw;
+  height:60vw;
+  position:relative;
+  /* shift start of gradient so 0deg corresponds to 324deg on the wheel; red stays a single slice */
+  background: conic-gradient(from 324deg,
+    #e74c3c 0deg 72deg,
+    #3498db 72deg 144deg,
+    #f1c40f 144deg 216deg,
+    #2ecc71 216deg 288deg,
+    #9b59b6 288deg 360deg
+  );
+  overflow:hidden; /* clip icons outside */
+}
+
+#wheel .slice{
+  position:absolute;
+  width:400px;
+  height:400px;
+  top:0;
+  left:0;
+  display:flex;
+  align-items:flex-start; /* push emoji toward outer edge */
+  justify-content:center;
+  padding-top:40px;
+  clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+}
+
+#wheel .icon{
+  position:absolute;
+  top:45%;
+  left:45%;
+  display:inline-block;
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  text-align:center;
+  transform-origin:50% 50%; /* rotate around center */
+}
+
+/* remove old slice color rules since background gradient handles it */
+
+
+.pointer{
+  position:absolute;
+  top:-20px; /* offset for larger wheel */
+  left:50%;
+  transform:translateX(-50%);
+  width:0;
+  height:0;
+  border-left:20px solid transparent;
+  border-right:20px solid transparent;
+  border-bottom:25px solid #e74c3c; /* pointing down towards wheel */
+  z-index:2;
+}
+
+/* spin animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(1080deg); }
+}
+
+/* ensure spin button sits directly below wheel */
+.wheel-container button,
+button.btn-primary {
+  margin-top:8px; /* small gap */
+  display:block;
+  width:50%;
+  max-width:200px;
+  align-self:center;
+  z-index:1;
+}
+
+.wheel-container{
+  justify-content: center;
+}
+.spin-animation {
+  animation: spin 2s ease-out;
+}
+
+.mission-card{
+  background:#ffffffdd;
+  border-radius:15px;
+  padding:15px;
+  box-shadow:0 4px 8px rgba(0,0,0,.1);
+}
+
+.progress-bar{
+  background:#eee;
+  border-radius:10px;
+  overflow:hidden;
+  height:12px;
+}
+
+.progress{
+  height:100%;
+  background:#3498db;
+  width:0%; /* animate via JS if needed */
+}
+
+.profile-header{
+  text-align:center;
+  padding:20px;
+}
+
+.avatar-big{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  background:#3498db;
+  color:#fff;
+  font-size:36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:auto;
+  box-shadow:0 4px 8px rgba(0,0,0,.1);
+}
+
+.profile-stats{
+  display:flex;
+  justify-content:space-around;
+  padding:20px;
+}
+
+.stat{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 4x 8px rgba(0,0,0,.1);
+  width:80px;
+}
+
+.profile-progress{
+  padding:20px;
+}
+
+
+
+
+
+.search{
+
+border:none;
+padding:10px 15px;
+border-radius:20px;
+width:60%;
+
+}
+
+.icons{
+
+font-size:20px;
+
+}
+
+/* HERO */
+
+.hero{
+
+text-align:center;
+margin-top:20px;
+
+}
+
+.character{
+
+font-size:80px;
+
+}
+
+/* GAME SECTION */
+
+.game-section{
+position: absolute;
+width:100%;
+bottom:0;
+background:white;
+border-radius:30px 30px 0 0;
+padding:20px;
+height: 30%;
+}
+
+.game-section h2{
+font-size: 40px;
+}
+
+.play-btn{
+
+width:100%;
+background:black;
+color:white;
+border:none;
+padding:15px;
+border-radius:25px;
+margin-bottom:20px;
+
+}
+
+/* CARDS */
+
+.games{
+
+display:flex;
+gap:15px;
+overflow-x:auto;
+
+}
+
+.card{
+
+background:#f5f5f5;
+padding:15px;
+border-radius:15px;
+text-align:center;
+min-width:120px;
+
+}
+
+.card button{
+
+background:#4a90e2;
+border:none;
+color:white;
+padding:8px 15px;
+border-radius:10px;
+
+}
+
+/* AVATARS */
+
+.avatar{
+
+width:50px;
+height:50px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-weight:bold;
+margin:auto;
+margin-bottom:10px;
+
+}
+
+.green{background:#2ecc71;}
+.blue{background:#3498db;}
+.orange{background:#f39c12;}
+
+/* NAVBAR */
+
+.navbar{
+
+position:fixed;
+bottom:0;
+width:100%;
+min-height: 3.1%;
+background:white;
+display:flex;
+justify-content:space-around;
+padding:15px;
+font-size:22px;
+
+}
+
+.navbar div{
+cursor:pointer;
+font-size: 40px;
+}
+/* icono 1 */
+
+.icono1{
+    display: flex;
+    height: 50vh;
+    justify-content: center;   
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Missions</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/fondo.css">
+</head>
+
+<body>
+
+<h1 class="title">Daily Missions</h1>
+
+<div class="missions">
+
+<div class="mission-card">
+<h3>Answer 5 Questions</h3>
+<p>Reward: +20 points</p>
+
+<div class="progress-bar">
+<div class="progress small"></div>
+</div>
+
+</div>
+
+<div class="mission-card">
+<h3>Win 1 Game</h3>
+<p>Reward: +30 points</p>
+
+<div class="progress-bar">
+<div class="progress small"></div>
+</div>
+
+</div>
+
+<div class="mission-card">
+<h3>Play 3 Games</h3>
+<p>Reward: +40 points</p>
+
+<div class="progress-bar">
+<div class="progress small"></div>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div onclick="goMenu()">🏠</div>
+<div class="active">🎯</div>
+<div onclick="goGame()">🎮</div>
+<div onclick="goProfile()">👤</div>
+
+</div>
+
+<script>
+
+function goMenu(){
+window.location.href="menu.html"
+}
+
+function goProfile(){
+window.location.href="profile.html"
+}
+
+function goGame(){
+window.location.href="roulette.html"
+}
+
+</script>
+
+</body>
+</html>

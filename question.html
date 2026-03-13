@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Question</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/fondo.css">
+<script src="js/game.js"></script>
+</head>
+
+<body class="center">
+
+<h2 id="question"></h2>
+<p id="category" style="font-style:italic; color:#fff;"></p>
+
+<div class="answers">
+
+<button onclick="answer(0)" id="a"></button>
+<button onclick="answer(1)" id="b"></button>
+<button onclick="answer(2)" id="c"></button>
+<button onclick="answer(3)" id="d"></button>
+
+</div>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div onclick="goMenu()">🏠</div>
+  <div onclick="goMissions()">🎯</div>
+  <div onclick="goGame()">🎮</div>
+  <div onclick="goProfile()">👤</div>
+</div>
+
+<script>
+function goMenu(){ window.location.href="menu.html"; }
+function goMissions(){ window.location.href="missions.html"; }
+function goGame(){ window.location.href="roulette.html"; }
+function goProfile(){ window.location.href="profile.html"; }
+</script>
+
+</body>
+</html>
