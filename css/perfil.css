@@ -1,34 +1,37 @@
-.profile-topbar {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 18px 20px;
+.profile-header{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  padding:30px 20px 10px;
 }
 
-.profile-topbar .avatar-big {
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
-  background: linear-gradient(140deg, #f6b93b, #e55039);
-  color: #fff;
-  font-size: 34px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  box-shadow: 0 12px 18px rgba(0,0,0,.16);
+.avatar-big{
+  width:300px;
+  height:300px;
+  border-radius:50%;
+  background:linear-gradient(140deg,#f6b93b,#e55039);
+  color:white;
+  font-size:50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  box-shadow:0 15px 25px rgba(0,0,0,.25);
+  margin-bottom:12px;
 }
 
-.profile-user h2 {
+.profile-user h2{
   margin:0;
-  font-size: 30px;
-  letter-spacing: .2px;
+  font-size:38px;
 }
 
-.profile-user p {
-  color: white;
-  margin: 2px 0 0;
+.profile-user p{
+  margin:4px 0;
+  color:white;
+  font-size:38px;
 }
+
 
 .profile-actions {
   padding: 0 20px 14px;
@@ -69,6 +72,7 @@
   display: flex;
   margin: 14px 20px 4px;
   border-bottom: 2px solid #eee;
+  font-size: 40px;
 }
 
 .profile-tabs .tab {
@@ -77,28 +81,33 @@
   background: transparent;
   border: none;
   color: #777;
-  font-size: 18px;
+  font-size: 8px;
   font-weight: 700;
 }
+
+
 
 .profile-tabs .tab.active {
   color: white;
   border-bottom: 4px solid #000;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .profile-summary {
   padding: 0 20px 20px;
 }
 
-.profile-summary h1 {
-  font-size: 44px;
-  margin: 8px 0 6px;
+
+  .profile-summary h1 {
+  font-size: 48px;
+  font-weight:800;
 }
+
+
 
 .profile-summary p {
   color: white;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .profile-cards {
@@ -114,10 +123,12 @@
   border-radius: 16px;
   padding: 12px 14px;
   box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  height: 25vh;
+
 }
 
 .profile-card h4 {
-  margin:0; color:#666; letter-spacing:.5px;
+  margin:0; color:#000; letter-spacing:.5px;
   font-size: 30px;
 }
 
@@ -129,17 +140,52 @@
 .profile-card p {
   margin: 0 0 8px;
   font-size: 30px;
-  color: #333;
+  color: #000000;
 }
 
-.profile-card .progress-bar {
-  height: 10px;
-  background: #e1e1e1;
-  border-radius: 999px;
-  overflow: hidden;
+.progress{
+  transition: width 0.8s ease;
 }
 
-.profile-card .progress-bar .progress {
-  height: 100%;
-  background: linear-gradient(90deg, #f39c12, #eb2f06);
+.profile-progress{
+  padding: 0 20px 20px;
+  text-align:center;
 }
+
+.profile-progress h3{
+  font-size:22px;
+  margin-bottom:10px;
+  color:white;
+}
+
+.profile-progress .progress-bar{
+  height:14px;
+  background:#e1e1e1;
+  border-radius:999px;
+  overflow:hidden;
+}
+
+.profile-progress .progress{
+  height:100%;
+  width:60%;
+  background:linear-gradient(90deg,#f39c12,#eb2f06);
+}
+
+.profile-progress p{
+  color:white;
+  margin-top:8px;
+}
+
+.icvocabulary{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.icon{
+  font-size:10vh;
+  margin-left:35%;
+}
+
+
+
