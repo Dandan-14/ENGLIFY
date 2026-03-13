@@ -97,7 +97,7 @@ padding:20px;
 
 .icons{
 
-font-size:20px;
+font-size:30px;
 
 }
 
@@ -225,11 +225,10 @@ body.roulette {
   }
 
   /* scale wheel down */
-  .wheel-container { width:90vw; }
-  #wheel { width:260px; height:260px; }
+  .wheel-container { width:100vw; }
   #wheel .slice { width:260px; height:260px; padding-top:26px; }
-  #wheel .icon { width:30px; height:30px; font-size:20px; }
-  .pointer { top:-15px; border-left:15px solid transparent; border-right:15px solid transparent; border-bottom:20px solid #e74c3c; }
+  #wheel .icon { width:30px; height:30px; font-size: 70px;}
+  .pointer { border-left:15px solid transparent; border-right:15px solid transparent; border-top:20px solid #e74c3c; }
 }
 
 .navbar div{
@@ -281,18 +280,17 @@ body.roulette {
 /* wheel container positions pointer */
 .wheel-container{
   position:relative;
-  width:420px; /* bigger container to match larger wheel */
+  width:100vw; /* bigger container to match larger wheel */
   margin:auto;
 }
 
 #wheel{
-  font-size:40px;
-  padding:0;
-  border:4px dashed #3498db;
+  border:5px solid #000;
   border-radius:50%;
   width:60vw;
   height:60vw;
   position:relative;
+  margin-left: 19%;
   /* shift start of gradient so 0deg corresponds to 324deg on the wheel; red stays a single slice */
   background: conic-gradient(from 324deg,
     #e74c3c 0deg 72deg,
@@ -302,6 +300,7 @@ body.roulette {
     #9b59b6 288deg 360deg
   );
   overflow:hidden; /* clip icons outside */
+  z-index: 1;
 }
 
 #wheel .slice{
@@ -322,7 +321,6 @@ body.roulette {
   top:45%;
   left:45%;
   display:inline-block;
-  font-size:24px;
   width:40px;
   height:40px;
   line-height:40px;
@@ -338,12 +336,12 @@ body.roulette {
   top:-20px; /* offset for larger wheel */
   left:50%;
   transform:translateX(-50%);
-  width:0;
-  height:0;
+  width:25px;
+  height:25px;
   border-left:20px solid transparent;
   border-right:20px solid transparent;
-  border-bottom:25px solid #e74c3c; /* pointing down towards wheel */
-  z-index:2;
+  border-top:25px solid #e74c3c; /* pointing down towards wheel */
+  z-index: 2;
 }
 
 /* spin animation */
@@ -360,7 +358,6 @@ button.btn-primary {
   width:50%;
   max-width:200px;
   align-self:center;
-  z-index:1;
 }
 
 .wheel-container{
