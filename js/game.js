@@ -8,7 +8,7 @@ let questions = [
     correct: 1
   },
   {
-    category: "Vocabulary",
+    category: "Writing",
     question: "What is the translation of 'casa'?",
     options: ["House", "Car", "Tree", "Book"],
     correct: 0
@@ -35,6 +35,57 @@ let questions = [
 
 // state for current question
 let currentQuestion = null;
+
+function getCategoryIcon(category) {
+  const icons = {
+    Vocabulary: '📚',
+    Writing: '✏️',
+    Listening: '🎧',
+    Reading: '📖',
+    Grammar: '🧠'
+    
+  };
+  return icons[category] || '🧩';
+}
+
+function getCategoryClass(category) {
+  return category.toLowerCase();
+}
+
+function showAlert(message, category = 'Vocabulary', duration = 1400, onDone) {
+  let overlay = document.getElementById('alertas-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'alertas-overlay';
+    overlay.className = 'alertas-overlay';
+
+    const box = document.createElement('div');
+    box.className = 'alertas-box';
+    box.innerHTML = `
+      <div class="alertas-icon">${getCategoryIcon(category)}</div>
+      <h2 class="alertas-title">${message}</h2>
+      <p class="alertas-subtitle">${category}</p>
+    `;
+    overlay.appendChild(box);
+    document.body.appendChild(overlay);
+  }
+
+  const box = overlay.querySelector('.alertas-box');
+  box.className = `alertas-box ${getCategoryClass(category)}`;
+  box.querySelector('.alertas-icon').textContent = getCategoryIcon(category);
+  box.querySelector('.alertas-title').textContent = message;
+  box.querySelector('.alertas-subtitle').textContent = category;
+
+  overlay.classList.add('show');
+
+  setTimeout(() => {
+    overlay.classList.remove('show');
+    setTimeout(() => {
+      if (overlay.parentElement) overlay.remove();
+      if (typeof onDone === 'function') onDone();
+    }, 240);
+  }, duration);
+}
 
 function spin() {
   const wheel = document.getElementById('wheel');
@@ -73,9 +124,9 @@ function spin() {
 
   wheel.addEventListener('transitionend', () => {
     btn.disabled = false;
-    // alert after the wheel stops so pointer aligns
-    alert("Category: " + choice);
-    window.location.href = "question.html";
+    showAlert("Categoría: " + choice, choice, 1400, () => {
+      window.location.href = "question.html";
+    });
   }, { once: true });
 }
 
@@ -105,8 +156,9 @@ function answer(option) {
 
   if (option === currentQuestion.correct) {
     // correct -> show a quick message and load another question
-    alert("Correct! Here's a new one.");
-    loadQuestion();
+    showAlert("¡Correcto!", currentQuestion.category, 1100, () => {
+      loadQuestion();
+    });
   } else {
     localStorage.setItem("result", "Wrong Answer");
     window.location.href = "result.html";
